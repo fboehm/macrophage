@@ -5,7 +5,7 @@ jobs:
     container: rocker/verse
     steps:
       - uses: actions/checkout@v1
-      - run: R -e 'rmarkdown::render("analysis/paper.Rmd")'
+      - run: R -e 'rmarkdown::render("analysis/paper/paper.Rmd")'
       - name: Upload results
         uses: actions/upload-artifact@master
         with:
