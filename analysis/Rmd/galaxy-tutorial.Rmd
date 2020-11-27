@@ -1,0 +1,43 @@
+---
+title: "Galaxy Tutorial"
+author: "Frederick J. Boehm"
+date: "11/27/2020"
+output: html_document
+---
+
+## Goals
+
+Goal here is to write R code for analysis of 10x Genomics fastq files. Ultimately, we want to convert them into count matrices for use with bioconductor packages.
+
+The tutorial is here: https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/scrna-preprocessing-tenx/tutorial.html
+
+## Files for download
+
+```{r}
+urls <- c("https://zenodo.org/record/3457880/files/subset_pbmc_1k_v3_S1_L001_R1_001.fastq.gz",
+"https://zenodo.org/record/3457880/files/subset_pbmc_1k_v3_S1_L001_R2_001.fastq.gz",
+"https://zenodo.org/record/3457880/files/subset_pbmc_1k_v3_S1_L002_R1_001.fastq.gz",
+"https://zenodo.org/record/3457880/files/subset_pbmc_1k_v3_S1_L002_R2_001.fastq.gz"
+)
+```
+
+https://bioconductor.org/packages/release/bioc/vignettes/DropletUtils/inst/doc/DropletUtils.html#reading-in-10x-genomics-data
+
+The above url starts with outputs from 10xGenomics data, but it is not in fastq format!
+
+I really need to start with fastq files, read them into R, and then proceed with singleCellExperiment bioconductor objects.
+
+https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/mkfastq
+
+This url says a bit about generating fastq files from the 10xgenomics formatted outputs.
+
+https://nbisweden.github.io/excelerate-scRNAseq/session-seqmap/sequencing_qc.html
+
+This url, above, provides R code for walking through 10xgenomics outputs
+
+The bioconductor R package 'scruff' might be useful too: https://www.bioconductor.org/packages/release/bioc/html/scruff.html
+
+Actually, it may be that we don't want to read fastq files into R. We'll be using gbrs for genome creation and alignment... so we should think about the outputs of gbrs and getting them into R and the bioconductor SingleCellExperiment object structure.
+
+
+
